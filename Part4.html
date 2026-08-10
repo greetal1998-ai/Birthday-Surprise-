@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Kutty Hari ❤️</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Part 4 CSS -->
+    <link rel="stylesheet" href="Style4.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
+
+    <audio id="bgMusic">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- MUSIC BUTTON -->
+
+    <button class="music-btn" onclick="toggleMusic()">
+    🎶
+</button>
+
+
+    <!-- =========================
+         SLIDESHOW
+    ========================== -->
+
+    <div class="slideshow">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="slide active">
+
+            <img src="Laugh.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The laugh you have</h1>
+
+                <p>
+                    That loud laugh… you have...pathudee irukalam pola irukum..  🥹❤️
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="slide">
+
+            <img src="Naughty.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The naughtiness</h1>
+
+                <p>
+                    Sometimes oru look kudupinga paruinga...
+                    i know...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="slide">
+
+            <img src="Inno.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The innocent one</h1>
+
+                <p>
+                    Look at this innocent face...
+                    etho onum theriyatha papa mari......
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="slide">
+
+            <img src="Hott.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The Smartest one</h1>
+
+                <p>
+                    Okay… this one......
+                    How are you this damn handsome? 🔥
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 5 -->
+
+        <div class="slide">
+
+            <img src="Playful.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The playful you</h1>
+
+                <p>
+                    Suddenly you will change the moment into fun... 😌
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 6 -->
+
+        <div class="slide">
+
+            <img src="Angryyy.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The angry you, but still the hottest one</h1>
+
+                <p>
+                    Even when you're angry… somehow you still manage
+                    to look ridiculously handsome. 😮‍💨❤️
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 7 -->
+
+        <div class="slide">
+
+            <img src="Smilee.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The smile</h1>
+
+                <p>
+                    That smile… I could look at it a thousand times
+                    and still fall for it. 🫠💕
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 8 -->
+
+        <div class="slide">
+
+            <img src="Cute.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>The CUttest one</h1>
+
+                <p>
+                  En favourite....pathale kadikanum pola iruku..see epdi ur sitting....
+                    
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 9 -->
+
+        <div class="slide">
+
+            <img src="Kutty hari.jpg" alt="Hari">
+
+            <div class="photo-text">
+
+                <h1>And finally… Kutty Hari</h1>
+
+                <p>
+                    And finally… my Kutty Hari.
+                    The one who is secretly the softest of them all.🫶
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+
+    <!-- =========================
+         FINAL CAT
+    ========================== -->
+
+<div class="final-cat" id="finalCat">
+
+    <img src="catts.jpg" alt="Cute cats">
+
+    <div class="final-love-text">
+
+        <div class="love-text">
+            Love you lots...
+        </div>
+
+        <div class="hari-text">
+            En Azhagu Hari ❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- =========================
+         NAVIGATION BUTTONS
+    ========================== -->
+
+    <!-- =========================
+         NAVIGATION BUTTONS
+    ========================== -->
+
+    <button class="prev-btn" onclick="previousSlide()">
+        ❮
+    </button>
+
+    <button class="next-btn" onclick="nextSlide()">
+        ❯
+    </button>
+
+
+    <!-- =========================
+         SLIDE INDICATORS
+    ========================== -->
+
+    <div class="dots">
+
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+        <span class="dot" onclick="showSlide(3)"></span>
+        <span class="dot" onclick="showSlide(4)"></span>
+        <span class="dot" onclick="showSlide(5)"></span>
+        <span class="dot" onclick="showSlide(6)"></span>
+        <span class="dot" onclick="showSlide(7)"></span>
+        <span class="dot" onclick="showSlide(8)"></span>
+
+    </div>
+
+
+    <!-- Part 4 JavaScript -->
+    <script src="Script4.js"></script>
+
+</body>
+
+</html>

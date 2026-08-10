@@ -1,0 +1,386 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    background:#dff5d8;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================
+   OPENING MESSAGE
+========================= */
+
+.opening{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:100%;
+
+    padding:20px;
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:34px;
+
+    color:#4b6048;
+
+    opacity:1;
+
+    transition:opacity 1s ease;
+
+}
+
+
+.opening.hide{
+
+    opacity:0;
+
+}
+
+
+/* =========================
+   WHITE LETTER POSTER
+========================= */
+
+.letter-card{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(.92);
+
+    width:88%;
+
+    max-width:360px;
+
+    height:82vh;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:28px 24px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
+
+    opacity:0;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    overflow:hidden;
+
+}
+
+
+.letter-card.show{
+
+    opacity:1;
+
+    transform:translate(-50%,-50%) scale(1);
+
+}
+
+
+/* =========================
+   LETTER SCROLL AREA
+========================= */
+
+.letter-content{
+
+    width:100%;
+
+    height:100%;
+
+    overflow-y:auto;
+
+    padding-right:4px;
+
+    padding-bottom:80px;
+
+    scroll-behavior:smooth;
+
+}
+
+
+.letter-content::-webkit-scrollbar{
+
+    width:0;
+
+}
+
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+.letter-content p{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    margin-bottom:22px;
+
+    opacity:0;
+
+    transform:translateY(12px);
+
+}
+
+
+/* =========================
+   SOFT FADE
+========================= */
+
+.letter-card.show .letter-content p{
+
+    animation:softFade 1.2s ease forwards;
+
+}
+
+
+.letter-card.show .letter-content p:nth-child(1){
+    animation-delay:.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(2){
+    animation-delay:1.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(3){
+    animation-delay:2.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(4){
+    animation-delay:3.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(5){
+    animation-delay:4.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(6){
+    animation-delay:5.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(7){
+    animation-delay:6.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(8){
+    animation-delay:7.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(9){
+    animation-delay:8.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(10){
+    animation-delay:9.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(11){
+    animation-delay:10.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(12){
+    animation-delay:11.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(13){
+    animation-delay:12.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(14){
+    animation-delay:13.5s;
+}
+
+.letter-card.show .letter-content p:nth-child(15){
+    animation-delay:14.5s;
+}
+
+
+@keyframes softFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   SPECIAL TEXT
+========================= */
+
+.highlight{
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive !important;
+
+    font-size:27px !important;
+
+    color:#4b6048 !important;
+
+}
+
+
+.ending{
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive !important;
+
+    font-size:27px !important;
+
+    color:#4b6048 !important;
+
+}
+
+
+.signature{
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive !important;
+
+    font-size:30px !important;
+
+    color:#4b6048 !important;
+
+}
+
+
+.kiss{
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive !important;
+
+    font-size:32px !important;
+
+    color:#4b6048 !important;
+
+    margin-bottom:40px !important;
+
+}
+
+
+/* =========================
+   NEXT PAGE BUTTON
+========================= */
+.photo-question{
+
+    position:absolute;
+    right:18px;
+    bottom:52px;
+    width:230px;
+    color:#e88fa8;
+    font-family:'Great Vibes',cursive;
+    font-size:25px;
+    line-height:1.2;
+    text-align:right;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.next-btn.show + .photo-question{
+
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.next-btn{
+
+    position:absolute;
+    right:18px;
+    bottom:16px;
+    border:none;
+    padding:9px 15px;
+    border-radius:20px;
+    background:#ffd6e5;
+    color:#8f4f67;
+    font-family:'Poppins',sans-serif;
+    font-size:11px;
+    font-weight:500;
+    cursor:pointer;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.08);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    pointer-events:none;
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+
+.next-btn.show{
+
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+
+.next-btn:active{
+
+    transform:scale(.94);
+
+}
+
+
+.next-btn:hover{
+
+    background:#cceec5;
+
+}

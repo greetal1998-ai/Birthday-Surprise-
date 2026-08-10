@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Surprise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+background:url("turtle.jpg") no-repeat center center;
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+transition:background 0.8s ease;
+}
+
+.container{
+width:100%;
+padding-left:150px;
+margin-top:-80px;
+}
+
+.hello{
+font-family:'Satisfy',cursive;
+font-size:30px;
+color:#1b4d2c;
+margin-bottom:10px;
+}
+
+.question{
+font-family:'Satisfy',cursive;
+font-size:20px;
+color:#1b4d2c;
+margin-bottom:35px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+}
+
+.option{
+display:flex;
+align-items:center;
+gap:5px;
+cursor:pointer;
+font-size:12px;
+font-weight:bold;
+color:#1b4d2c;
+}
+
+.heart{
+width:28px;
+height:28px;
+border-radius:25%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:14px;
+box-shadow:0 5px 12px rgba(0,0,0,.18);
+}
+
+.pink{
+background:#ffb6c1;
+color:white;
+}
+
+.white{
+background:white;
+color:#ff8ab5;
+border:2px solid #ffb6c1;
+}
+
+#kissPage{
+display:none;
+position:fixed;
+width:100%;
+height:100vh;
+background:#ffb6c1;
+justify-content:center;
+align-items:center;
+}
+
+#kiss{
+font-family:'Satisfy',cursive;
+font-size:30px;
+color:white;
+animation:pop .6s ease;
+}
+
+#kiss span{
+color:red;
+font-size:30px;
+}
+@keyframes pop{
+
+0%{
+opacity:0;
+transform:scale(.2);
+}
+
+60%{
+transform:scale(1.15);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+}
+#noBtn{
+position:relative;
+transition:0.3s ease;
+}
+
+#noMessage{
+font-family:'Satisfy',cursive;
+font-size:18px;
+color:#1b4d2c;
+margin-left:5px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+<div class="hello">
+Hellooo En Azhagu Hariiiii !!!
+</div>
+
+<div class="question">
+Do you like to touch me?
+</div>
+
+<div class="buttons">
+
+<div class="option" id="yesBtn">
+
+<div class="heart pink">❤</div>
+
+<span>Yes</span>
+
+</div>
+
+<div class="option" id="noBtn">
+
+<div class="heart white">❤</div>
+
+<span>No</span>
+
+<span id="noMessage"></span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="kissPage">
+    <div id="kiss">
+        Ummmaaaa !!!<span>❤</span>
+    </div>
+</div>
+
+<script>
+
+const yes=document.getElementById("yesBtn");
+
+yes.onclick=function(){
+
+document.getElementById("container").style.display="none";
+
+const yes=document.getElementById("yesBtn");
+
+yes.onclick=function(){
+
+document.getElementById("container").style.display="none";
+
+document.getElementById("kissPage").style.display="flex";
+
+}
+
+document.getElementById("kissPage").style.display="flex";
+
+setTimeout(function(){
+
+window.location.href="Part 2 index.html";
+
+},2000);
+
+}
+let noCount = 0;
+
+const no = document.getElementById("noBtn");
+const noMessage = document.getElementById("noMessage");
+
+no.onclick=function(){
+
+noCount++;
+
+if(noCount === 1){
+
+noMessage.innerHTML="(Really? 🥺)";
+
+no.style.transform="translateY(-20px)";
+
+}
+
+else if(noCount === 2){
+
+noMessage.innerHTML="(Nijama? 🥹)";
+
+no.style.transform="translateY(20px)";
+
+}
+
+else if(noCount === 3){
+
+noMessage.innerHTML="";
+
+no.style.transform="translateX(500px)";
+
+}
+
+}
+
+
+</script>
+
+</body>
+
+</html>

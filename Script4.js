@@ -1,7 +1,9 @@
+
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 const music = document.getElementById("bgMusic");
 const finalCat = document.getElementById("finalCat");
+const newBeginning = document.getElementById("newBeginning");
 
 let currentSlide = 0;
 let slideTimer;
@@ -17,10 +19,16 @@ function showSlide(index) {
         index = slides.length - 1;
     }
 
+    if (index >= slides.length) {
+        index = 0;
+    }
+
     currentSlide = index;
 
     slides.forEach(slide => {
         slide.classList.remove("active");
+        slide.style.opacity = "";
+        slide.style.transition = "";
     });
 
     dots.forEach(dot => {
@@ -28,20 +36,23 @@ function showSlide(index) {
     });
 
     slides[currentSlide].classList.add("active");
-    dots[currentSlide].classList.add("active");
+
+    if (dots[currentSlide]) {
+        dots[currentSlide].classList.add("active");
+    }
 
     restartTimer();
 }
 
 
 /* =========================
-   NEXT
+   NEXT SLIDE
 ========================= */
 
 function nextSlide() {
 
     /* =========================
-       LAST PHOTO → FINAL CAT
+       LAST PHOTO → CAT
     ========================= */
 
     if (currentSlide >= slides.length - 1) {
@@ -50,10 +61,15 @@ function nextSlide() {
 
         /* Hide slideshow controls */
 
-        document.querySelector(".prev-btn").style.display = "none";
-        document.querySelector(".next-btn").style.display = "none";
-        document.querySelector(".dots").style.display = "none";
-        document.querySelector(".music-btn").style.display = "none";
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const dotsContainer = document.querySelector(".dots");
+        const musicBtn = document.querySelector(".music-btn");
+
+        if (prevBtn) prevBtn.style.display = "none";
+        if (nextBtn) nextBtn.style.display = "none";
+        if (dotsContainer) dotsContainer.style.display = "none";
+        if (musicBtn) musicBtn.style.display = "none";
 
 
         /* Fade out last photo */
@@ -64,14 +80,19 @@ function nextSlide() {
         slides[currentSlide].style.opacity = "0";
 
 
-        /* Show cat after photo fades */
+        /* =========================
+           SHOW CAT
+        ========================= */
 
         setTimeout(function() {
 
+            finalCat.classList.remove("hide");
             finalCat.classList.add("show");
 
 
-            /* Stay for 10 seconds */
+            /* =========================
+               CAT STAYS FOR 10 SECONDS
+            ========================= */
 
             setTimeout(function() {
 
@@ -81,21 +102,37 @@ function nextSlide() {
                 finalCat.classList.add("hide");
 
 
-                /* Stop music only at the very end */
+                /* =========================
+                   SHOW 00:00 SCREEN
+                ========================= */
 
                 setTimeout(function() {
 
-                    music.pause();
-                    music.currentTime = 0;
+                    showNewBeginning();
 
-                    /* Close the page */
 
-                    window.close();
+                    /* =========================
+                       FINAL SCREEN 5 SECONDS
+                    ========================= */
+
+                    setTimeout(function() {
+
+    /* Keep the final screen visible
+       and let the music continue
+       for 5 more seconds */
+
+    setTimeout(function() {
+
+        music.pause();
+        music.currentTime = 0;
+
+    }, 10000);
+
+}, 5000);
 
                 }, 1500);
 
             }, 10000);
-
 
         }, 1500);
 
@@ -105,7 +142,7 @@ function nextSlide() {
 
     /* =========================
        NEXT PHOTO
-    ========================= */
+========================= */
 
     currentSlide++;
 
@@ -114,7 +151,7 @@ function nextSlide() {
 
 
 /* =========================
-   PREVIOUS
+   PREVIOUS SLIDE
 ========================= */
 
 function previousSlide() {
@@ -137,7 +174,7 @@ function restartTimer() {
 
     clearTimeout(slideTimer);
 
-    slideTimer = setTimeout(() => {
+    slideTimer = setTimeout(function() {
 
         nextSlide();
 
@@ -149,9 +186,9 @@ function restartTimer() {
    DOTS
 ========================= */
 
-dots.forEach((dot, index) => {
+dots.forEach(function(dot, index) {
 
-    dot.addEventListener("click", () => {
+    dot.addEventListener("click", function() {
 
         showSlide(index);
 
@@ -168,7 +205,9 @@ function toggleMusic() {
 
     if (music.paused) {
 
-        music.play();
+        music.play().catch(function() {
+            console.log("Music playback was blocked.");
+        });
 
     } else {
 
@@ -187,9 +226,9 @@ function startMusic() {
 
     music.volume = 0.7;
 
-    music.play().catch(() => {
+    music.play().catch(function() {
 
-        // Browser blocked autoplay
+        console.log("Autoplay blocked. Music will start after first touch.");
 
     });
 
@@ -202,25 +241,30 @@ function startMusic() {
 
 document.addEventListener("click", function firstTouch() {
 
-    music.play().catch(() => {});
-
-    document.removeEventListener(
-        "click",
-        firstTouch
-    );
+    music.play().catch(function() {});
 
 }, { once: true });
 
 
 /* =========================
-   START MUSIC
+   SHOW NEW BEGINNING
 ========================= */
 
-startMusic();
+function showNewBeginning() {
+
+    if (newBeginning) {
+
+        newBeginning.style.display = "flex";
+
+    }
+
+}
 
 
 /* =========================
-   START SLIDESHOW
+   START
 ========================= */
+
+startMusic();
 
 showSlide(0);

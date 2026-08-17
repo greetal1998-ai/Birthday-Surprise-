@@ -296,17 +296,11 @@ body {
 .dots {
 
     position: fixed;
-
     bottom: 15px;
-
     left: 50%;
-
     transform: translateX(-50%);
-
     display: flex;
-
     gap: 6px;
-
     z-index: 60;
 }
 
@@ -315,13 +309,9 @@ body {
 
     width: 7px;
     height: 7px;
-
     background: rgba(217, 79, 138, 0.35);
-
     border-radius: 50%;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
@@ -329,9 +319,7 @@ body {
 .dot.active {
 
     width: 20px;
-
     border-radius: 10px;
-
     background: #d94f8a;
 }
 
@@ -352,22 +340,19 @@ body {
 
     .photo-text p {
         font-size: 13px;
-
         padding: 0 8px;
     }
 
     .slide img {
         width: 82vw;
-        height: 65vh;
-
-        bottom: 7%;
+        height: 60vh;
+        bottom: 10%;
     }
 
     .prev-btn,
     .next-btn {
         width: 36px;
         height: 36px;
-
         font-size: 18px;
     }
 

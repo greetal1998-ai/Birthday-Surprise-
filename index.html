@@ -8,244 +8,434 @@
 
 <title>Birthday Surprise</title>
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-height:100vh;
-background:url("turtle.jpg") no-repeat center center;
-background-size:cover;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-transition:background 0.8s ease;
+    height:100vh;
+    background:url("turtle.jpg") no-repeat center center;
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    transition:background 0.8s ease;
 }
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.decorations{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+
+/* Small hearts */
+
+.heart-doodle{
+    position:absolute;
+    font-family:Arial, sans-serif;
+    color:#8fc99d;
+    font-size:30px;
+    opacity:0.45;
+}
+
+.heart1{
+    top:15%;
+    right:12%;
+    transform:rotate(-15deg);
+}
+
+.heart2{
+    top:35%;
+    right:7%;
+    font-size:24px;
+    transform:rotate(15deg);
+}
+
+.heart3{
+    bottom:18%;
+    left:8%;
+    font-size:26px;
+}
+
+
+/* Leaves */
+
+.leaf{
+    position:absolute;
+    color:#8fc99d;
+    opacity:0.35;
+    font-size:28px;
+}
+
+.leaf1{
+    top:12%;
+    left:8%;
+    transform:rotate(-25deg);
+}
+
+.leaf2{
+    bottom:12%;
+    right:10%;
+    transform:rotate(25deg);
+}
+
+
+/* Small dots */
+
+.dot{
+    position:absolute;
+    color:#8fc99d;
+    opacity:0.45;
+    font-size:25px;
+}
+
+.dot1{
+    top:20%;
+    right:25%;
+}
+
+.dot2{
+    bottom:25%;
+    left:20%;
+}
+
+.dot3{
+    bottom:15%;
+    right:30%;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container{
-width:100%;
-padding-left:150px;
-margin-top:-80px;
+    width:100%;
+    padding-left:150px;
+    margin-top:-80px;
+    position:relative;
+    z-index:2;
 }
 
+
+/* =========================
+   HELLO TEXT
+========================= */
+
 .hello{
-font-family:'Satisfy',cursive;
-font-size:30px;
-color:#1b4d2c;
-margin-bottom:10px;
+    font-family:'Satisfy',cursive;
+    font-size:30px;
+    color:#1b4d2c;
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+.littleHeart{
+    text-align:center;
+    color:#8fc99d;
+    font-size:22px;
+    margin:0 0 5px;
 }
 
 .question{
-font-family:'Satisfy',cursive;
-font-size:20px;
-color:#1b4d2c;
-margin-bottom:35px;
+    font-family:'Caveat',cursive;
+    font-size:20px;
+    font-weight:500;
+    color:#1b4d2c;
+    margin-bottom:35px;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
 .buttons{
-display:flex;
-gap:20px;
+    display:flex;
+    gap:20px;
 }
 
 .option{
-display:flex;
-align-items:center;
-gap:5px;
-cursor:pointer;
-font-size:12px;
-font-weight:bold;
-color:#1b4d2c;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:bold;
+    color:#1b4d2c;
 }
 
 .heart{
-width:28px;
-height:28px;
-border-radius:25%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:14px;
-box-shadow:0 5px 12px rgba(0,0,0,.18);
+    width:28px;
+    height:28px;
+    border-radius:25%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+    box-shadow:0 5px 12px rgba(0,0,0,.18);
 }
 
 .pink{
-background:#ffb6c1;
-color:white;
+    background:#ffb6c1;
+    color:white;
 }
 
 .white{
-background:white;
-color:#ff8ab5;
-border:2px solid #ffb6c1;
+    background:white;
+    color:#ff8ab5;
+    border:2px solid #ffb6c1;
 }
 
+
+/* =========================
+   KISS PAGE
+========================= */
+
 #kissPage{
-display:none;
-position:fixed;
-width:100%;
-height:100vh;
-background:#ffb6c1;
-justify-content:center;
-align-items:center;
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#ffb6c1;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
 }
 
 #kiss{
-font-family:'Satisfy',cursive;
-font-size:30px;
-color:white;
-animation:pop .6s ease;
+    font-family:'Satisfy',cursive;
+    font-size:30px;
+    color:white;
+    animation:pop .6s ease;
 }
 
 #kiss span{
-color:red;
-font-size:30px;
+    color:red;
+    font-size:30px;
 }
+
+
+/* =========================
+   KISS ANIMATION
+========================= */
+
 @keyframes pop{
 
-0%{
-opacity:0;
-transform:scale(.2);
+    0%{
+        opacity:0;
+        transform:scale(.2);
+    }
+
+    60%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
 }
 
-60%{
-transform:scale(1.15);
-}
 
-100%{
-opacity:1;
-transform:scale(1);
-}
-}
+/* =========================
+   NO BUTTON
+========================= */
+
 #noBtn{
-position:relative;
-transition:0.3s ease;
+    position:relative;
+    transition:0.3s ease;
 }
 
 #noMessage{
-font-family:'Satisfy',cursive;
-font-size:18px;
-color:#1b4d2c;
-margin-left:5px;
+    font-family:'Satisfy',cursive;
+    font-size:18px;
+    color:#1b4d2c;
+    margin-left:5px;
 }
-
 
 </style>
 
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     BACKGROUND DECORATIONS
+========================= -->
+
+<div class="decorations">
+
+    <span class="leaf leaf1">🌿</span>
+
+    <span class="leaf leaf2">🌿</span>
+
+    <span class="heart-doodle heart1">♡</span>
+
+    <span class="heart-doodle heart2">♡</span>
+
+    <span class="heart-doodle heart3">♡</span>
+
+    <span class="dot dot1">•</span>
+
+    <span class="dot dot2">•</span>
+
+    <span class="dot dot3">•</span>
+
+</div>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
 
 <div class="container" id="container">
 
-<div class="hello">
-Hellooo En Azhagu Hariiiii !!!
+    <div class="hello">
+        Hellooo En Azhagu Hariiiii !!!
+    </div>
+
+
+    <!-- Small decoration -->
+    <div class="littleHeart">
+        ♡
+    </div>
+
+
+    <div class="question">
+        Wanna see what I have for you?
+    </div>
+
+
+    <div class="buttons">
+
+        <div class="option" id="yesBtn">
+
+            <div class="heart pink">
+                ❤
+            </div>
+
+            <span>
+                Yes
+            </span>
+
+        </div>
+
+
+        <div class="option" id="noBtn">
+
+            <div class="heart white">
+                ❤
+            </div>
+
+            <span>
+                No
+            </span>
+
+            <span id="noMessage"></span>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div class="question">
-Do you like to touch me?
-</div>
 
-<div class="buttons">
-
-<div class="option" id="yesBtn">
-
-<div class="heart pink">❤</div>
-
-<span>Yes</span>
-
-</div>
-
-<div class="option" id="noBtn">
-
-<div class="heart white">❤</div>
-
-<span>No</span>
-
-<span id="noMessage"></span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<!-- =========================
+     KISS PAGE
+========================= -->
 
 <div id="kissPage">
+
     <div id="kiss">
         Ummmaaaa !!!<span>❤</span>
     </div>
+
 </div>
+
 
 <script>
 
-const yes=document.getElementById("yesBtn");
+const yes = document.getElementById("yesBtn");
 
-yes.onclick=function(){
+yes.onclick = function(){
 
-document.getElementById("container").style.display="none";
+    document.getElementById("container").style.display = "none";
 
-const yes=document.getElementById("yesBtn");
+    document.getElementById("kissPage").style.display = "flex";
 
-yes.onclick=function(){
+    // Tell Part 2 that it should start the birthday song
+    sessionStorage.setItem("playBirthdaySong", "true");
 
-document.getElementById("container").style.display="none";
+    setTimeout(function(){
 
-document.getElementById("kissPage").style.display="flex";
+        window.location.href = "Part 2 index.html";
 
-}
+    }, 2000);
 
-document.getElementById("kissPage").style.display="flex";
+};
 
-setTimeout(function(){
 
-window.location.href="Part 2 index.html";
-
-},2000);
-
-}
 let noCount = 0;
 
 const no = document.getElementById("noBtn");
+
 const noMessage = document.getElementById("noMessage");
 
-no.onclick=function(){
 
-noCount++;
+no.onclick = function(){
 
-if(noCount === 1){
+    noCount++;
 
-noMessage.innerHTML="(Really? 🥺)";
+    if(noCount === 1){
 
-no.style.transform="translateY(-20px)";
+        noMessage.innerHTML = "(Really? 🥺)";
 
-}
+        no.style.transform = "translateY(-20px)";
 
-else if(noCount === 2){
+    }
 
-noMessage.innerHTML="(Nijama? 🥹)";
+    else if(noCount === 2){
 
-no.style.transform="translateY(20px)";
+        noMessage.innerHTML = "(Nijama? 🥹)";
 
-}
+        no.style.transform = "translateY(20px)";
 
-else if(noCount === 3){
+    }
 
-noMessage.innerHTML="";
+    else if(noCount === 3){
 
-no.style.transform="translateX(500px)";
+        noMessage.innerHTML = "";
 
-}
+        no.style.transform = "translateX(500px)";
 
-}
+    }
 
+};
 
 </script>
 

@@ -9,7 +9,7 @@
     <title>My Kutty Hari ❤️</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Part 4 CSS -->
     <link rel="stylesheet" href="Style4.css">
@@ -27,11 +27,13 @@
     </audio>
 
 
-    <!-- MUSIC BUTTON -->
+    <!-- =========================
+         MUSIC BUTTON
+    ========================== -->
 
-    <button class="music-btn" onclick="toggleMusic()">
-    🎶
-</button>
+    <button class="music-btn" id="musicBtn">
+        🎶
+    </button>
 
 
     <!-- =========================
@@ -130,7 +132,8 @@
                 <h1>The playful you</h1>
 
                 <p>
-                    Somehow, you know how to turn any moment into fun... you’re a specialist in that😌
+                    Somehow, you know how to turn any moment into fun...
+                    you’re a specialist in that 😌
                 </p>
 
             </div>
@@ -177,6 +180,7 @@
 
         </div>
 
+
         <!-- PHOTO 8 -->
 
         <div class="slide">
@@ -185,15 +189,17 @@
 
             <div class="photo-text">
 
-                <h1>My Weakness: You.️</h1>
+                <h1>My Weakness: You.</h1>
 
                 <p>
-                    Ipdi paathale....En Heart thudikuthu....un lips veraa....mmmmm..kiss pannanum pola irukuu...epdi ipdi irukaaa niiiii..😭.
+                    Ipdi paathale....En Heart thudikuthu....un lips veraa....
+                    mmmmm..kiss pannanum pola irukuu...epdi ipdi irukaaa niiiii..😭
                 </p>
 
             </div>
-        </div>   
-        
+
+        </div>
+
 
         <!-- PHOTO 9 -->
 
@@ -203,11 +209,11 @@
 
             <div class="photo-text">
 
-                <h1>The Cuttest one</h1>
+                <h1>The Cutest one</h1>
 
                 <p>
-                  En favourite....kadikanum pola iruku..see epdi ur sitting....
-                    
+                    En favourite....konjanum pola irukum..
+                    see epdi ur sitting....
                 </p>
 
             </div>
@@ -226,7 +232,7 @@
                 <h1>And finally… Kutty Hari</h1>
 
                 <p>
-                    The most innocent and softest of them all.🫶
+                    The most innocent and softest of them all. 🫶
                 </p>
 
             </div>
@@ -241,38 +247,34 @@
          FINAL CAT
     ========================== -->
 
-<div class="final-cat" id="finalCat">
+    <div class="final-cat" id="finalCat">
 
-    <img src="Catts.jpg" alt="Cute cats">
+        <img src="Catts.jpg" alt="Cute cats">
 
-    <div class="final-love-text">
+        <div class="final-love-text">
 
-        <div class="love-text">
-            Love you lots...
-        </div>
+            <div class="love-text">
+                Love you lots...
+            </div>
 
-        <div class="hari-text">
-            En Azhagu Hari ❤️
+            <div class="hari-text">
+                En Azhagu Hari ❤️
+            </div>
+
         </div>
 
     </div>
 
-</div>
-
 
     <!-- =========================
          NAVIGATION BUTTONS
     ========================== -->
 
-    <!-- =========================
-         NAVIGATION BUTTONS
-    ========================== -->
-
-    <button class="prev-btn" onclick="previousSlide()">
+    <button class="prev-btn" id="prevBtn">
         ❮
     </button>
 
-    <button class="next-btn" onclick="nextSlide()">
+    <button class="next-btn" id="nextBtn">
         ❯
     </button>
 
@@ -283,27 +285,49 @@
 
     <div class="dots">
 
-        <span class="dot active" onclick="showSlide(0)"></span>
-        <span class="dot" onclick="showSlide(1)"></span>
-        <span class="dot" onclick="showSlide(2)"></span>
-        <span class="dot" onclick="showSlide(3)"></span>
-        <span class="dot" onclick="showSlide(4)"></span>
-        <span class="dot" onclick="showSlide(5)"></span>
-        <span class="dot" onclick="showSlide(6)"></span>
-        <span class="dot" onclick="showSlide(7)"></span>
-        <span class="dot" onclick="showSlide(8)"></span>
-        <span class="dot" onclick="showSlide(9)"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
 
     </div>
-    <!-- Final New Beginning Screen -->
-<div id="newBeginning" class="new-beginning">
-    <div class="beginning-content">
-        <div class="midnight">00:00</div>
-        <div class="date">19 AUG</div>
-        <div class="meaning">— Another Beautiful Year —</div>
+
+
+    <!-- =========================
+         FINAL SCREEN
+    ========================== -->
+
+    <div id="newBeginning" class="new-beginning">
+
+        <div class="beginning-content">
+
+            <div class="midnight">
+                00:00
+            </div>
+
+            <div class="date">
+                19 AUG
+            </div>
+
+            <div class="meaning">
+                — Another Beautiful Year —
+            </div>
+
+        </div>
+
     </div>
-</div>
-    <!-- Part 4 JavaScript -->
+
+
+    <!-- =========================
+         PART 4 JAVASCRIPT
+    ========================== -->
+
     <script src="Script4.js"></script>
 
 </body>

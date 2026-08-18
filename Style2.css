@@ -150,3 +150,62 @@ body{
     transform:scale(.94);
 }
 }
+/* Music Control - Below Touch Me Button */
+
+#musicControl {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 4px;
+
+    z-index: 10;
+}
+
+#musicText {
+    font-family: 'Satisfy', cursive;
+
+    font-size: 14px;
+
+    color: #7b557d;
+
+    white-space: nowrap;
+}
+
+#musicBtn {
+    width: auto;
+    height: auto;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #7b557d;
+
+    font-size: 18px;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+#musicBtn:active {
+    transform: scale(0.9);
+}

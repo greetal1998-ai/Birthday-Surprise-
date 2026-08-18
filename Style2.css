@@ -149,32 +149,26 @@ body{
 .more-section button:active{
     transform:scale(.94);
 }
-}
-/* Music Control - Below Touch Me Button */
 
+/* Music Control */
 #musicControl {
-    position: relative;
-
     width: 100%;
-
     margin-top: 10px;
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
 
-    gap: 4px;
+    gap: 5px;
 
-    z-index: 10;
+    position: relative;
+    z-index: 20;
 }
 
 #musicText {
     font-family: 'Satisfy', cursive;
-
     font-size: 14px;
-
     color: #7b557d;
-
     white-space: nowrap;
 }
 
@@ -187,11 +181,9 @@ body{
 
     border: none;
     outline: none;
-
     background: transparent;
 
     color: #7b557d;
-
     font-size: 18px;
     line-height: 1;
 
@@ -200,7 +192,6 @@ body{
     justify-content: center;
 
     cursor: pointer;
-
     box-shadow: none;
 
     -webkit-tap-highlight-color: transparent;

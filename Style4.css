@@ -233,26 +233,36 @@ body {
 
 }
 
-
 /* =========================
-   MUSIC BUTTON
+   MUSIC CONTROL
 ========================= */
 
 .music-btn {
     position: fixed;
-    top: 18px;
-    right: 18px;
-    width: 45px;
-    height: 45px;
+    top: 15px;
+    right: 15px;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
     border: none;
-    border-radius: 50%;
-    background: white;
-    color: white;
-    font-size: 20px;
+    outline: none;
+    background: transparent;
+    color: #7b557d;
+    font-family: 'Satisfy', cursive;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
     z-index: 100;
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.music-btn:active {
+    transform: scale(0.9);
 }
 
 

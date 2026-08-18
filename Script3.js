@@ -1,8 +1,12 @@
 const opening = document.getElementById("opening");
 const letterCard = document.getElementById("letterCard");
 const letterContent = document.querySelector(".letter-content");
-const nextBtn = document.querySelector(".next-btn");
+const nextBtn = document.getElementById("nextBtn");
 
+
+/* =========================
+   OPENING MESSAGE
+========================= */
 
 setTimeout(() => {
 
@@ -11,12 +15,21 @@ setTimeout(() => {
 }, 3000);
 
 
+/* =========================
+   SHOW LETTER
+========================= */
+
 setTimeout(() => {
 
     letterCard.classList.add("show");
 
 }, 3800);
 
+
+/* =========================
+   SHOW NEXT BUTTON
+   ONLY AT BOTTOM
+========================= */
 
 letterContent.addEventListener("scroll", () => {
 
@@ -27,7 +40,8 @@ letterContent.addEventListener("scroll", () => {
     const totalHeight =
         letterContent.scrollHeight;
 
-    if(currentPosition >= totalHeight - 10){
+
+    if (currentPosition >= totalHeight - 10) {
 
         nextBtn.classList.add("show");
 
@@ -36,8 +50,12 @@ letterContent.addEventListener("scroll", () => {
 });
 
 
-function goToPage4(){
+/* =========================
+   GO TO PAGE 4
+========================= */
 
-    window.location.href = "Part4.html";
+nextBtn.addEventListener("click", () => {
 
-}
+    window.location.href = "./Part4.html";
+
+});

@@ -133,7 +133,7 @@ body {
     height: min(100vh, 420px);
     object-fit: cover;
     left: 50%;
-    bottom: 7%;
+    bottom: 13%;
     transform: translateX(-50%) translateY(120%);
     border-radius: 22px;
     border: 5px solid white;
